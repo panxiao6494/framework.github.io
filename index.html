@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>canvas firework demo</title>
+	<title>烟花</title>
 	<style type="text/css">
 		.backgroundCity {
 			position: fixed;
@@ -9,9 +10,11 @@
 			bottom: 0;
 			z-index: 100;
 		}
+
 		.backgroundCity img {
 			width: 100%;
 		}
+
 		.moon {
 			width: 150px;
 			height: 150px;
@@ -21,10 +24,12 @@
 			z-index: 100;
 			box-shadow: 5px 5px 5px #fff outset;
 		}
+
 		.moon img {
 			width: 100%;
 			height: 100%;
 		}
+
 		#animationTest {
 			z-index: 100;
 			position: fixed;
@@ -33,19 +38,56 @@
 			width: 100;
 			height: 100;
 		}
+
+		/* h2 {
+			position: fixed;
+			top: 20px;
+			left: 100px;
+			color: #fff;
+		} */
+
 		canvas {
-			background-color:rgba(0,5,24,1);
+			background-color: rgba(0, 5, 24, 1);
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+		}
+
+		@keyframes caret {
+			from {
+				border-color: transparent;
+			}
+		}
+
+		h2 {
+			position: fixed;
+			top: 20px;
+			left: 100px;
+			font: bold 200% Consolas, Monaco, monospace;
+			width: 15ch;
+			overflow: hidden;
+			white-space: nowrap;
+			border-right: 2px solid;
+			animation: typing 8s steps(12),
+				caret 1s steps(2) infinite;
+			color: #fff;
 		}
 	</style>
 </head>
+
 <body>
-	<canvas id="canvas"  width="1920" height="950">浏览器不支持canvas</canvas>
+	<canvas id="canvas" width="1920" height="950">浏览器不支持canvas</canvas>
 	<div class="backgroundCity">
 		<img src="./imgs/city.png">
 	</div>
+	<h2>小樱，你最可爱！</h2>
 	<div class="moon">
-		<img  src="./imgs/moon.png">
+		<img src="./imgs/moon.png">
 	</div>
 	<script type="text/javascript" src="./fireworks.js"></script>
 </body>
+
 </html>
